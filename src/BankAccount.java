@@ -18,11 +18,6 @@ public class BankAccount {
     public void setBalance(int balance) {
         this.balance = balance;
     }
-
-//    public int getPreviousTransaction() {
-//        return previousTransaction;
-//    }
-
     public void setPreviousTransaction(int previousTransaction) {
         this.previousTransaction = previousTransaction;
     }
@@ -55,7 +50,7 @@ public class BankAccount {
     }
 
     void withdraw(int amount) {
-        if (amount > 0 ) {
+        if (amount <= getBalance()) {
             balance = balance - amount;
             previousTransaction = +amount;
             System.out.println("****Withdrawn Successful***");
