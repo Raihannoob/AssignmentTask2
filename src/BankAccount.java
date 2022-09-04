@@ -1,14 +1,17 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 public class BankAccount {
     int balance;
     int previousTransaction;
     String customerName;
     int customerId;
-
-    public BankAccount(int balance, String customerName, int customerId) {
+    String customerEmail;
+    public BankAccount(int balance, String customerName, int customerId,String customerEmail) {
         this.balance = balance;
         this.customerName = customerName;
         this.customerId = customerId;
+        this.customerEmail= customerEmail;
     }
 
     public int getBalance() {
@@ -70,17 +73,16 @@ public class BankAccount {
             System.out.println("No Transaction occurred");
         }
     }
-
     void showMenu() {
         char option = '\0';
         Scanner scanner = new Scanner(System.in);
-        System.out.println("welcome" + customerName);
-        System.out.println(customerId);
+        System.out.println("welcome "+" "+ customerName);
+        System.out.println("Account Number "+customerId);
         System.out.println("\n");
-        System.out.println("A.Check Balance");
+        System.out.println("A.Check Details");
         System.out.println("B.Deposit");
         System.out.println("C.Withdraw");
-        System.out.println("D.Previous Transaction");
+        System.out.println("D.Transfer Money");
         System.out.println("E.Exit");
         do {
             System.out.println("==========================================");
@@ -91,6 +93,11 @@ public class BankAccount {
             switch (option) {
                 case 'A':
                     System.out.println("-----------------------");
+                    System.out.println("Name: " +customerName);
+                    System.out.println("Email: " +customerEmail);
+                    System.out.println("Account Number: "+customerId);
+                    System.out.println("Transaction History: ");
+                    getPreviousTransaction();
                     System.out.println("Balance = " + balance);
                     System.out.println("-----------------------");
                     System.out.println("\n");
@@ -113,9 +120,12 @@ public class BankAccount {
                     break;
                 case 'D':
                     System.out.println("-----------------------");
-                    System.out.println("Previous Transaction:");
-                    getPreviousTransaction();
-                    System.out.println("\n");
+                    System.out.println("Enter Bank Account Number:");
+                    System.out.println("-----------------------");
+                    int bankAcNo = scanner.nextInt();
+                    System.out.println("Enter Amount:");
+                    int amount = scanner.nextInt();
+                    System.out.println("-----------------------");
                     break;
                 case 'E':
                     System.out.println("*************************");
