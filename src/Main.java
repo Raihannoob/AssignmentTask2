@@ -18,7 +18,7 @@ public class Main {
         int receiverCount = 0;
         int senderCount =   0;
         for (BankAccount bankAccount : bankAccountList) {
-            //for Checking Sender account
+            //for Checking Sender account senderBankAcNo == 1  
             if (bankAccount.customerId == senderBankAcNo && senderBankAcNo == 1) {
                 senderCount += 1;
                 //separate sender object
@@ -64,7 +64,7 @@ public class Main {
                 System.out.println("Enter Initial deposit(You must deposit more than 1000tk for open a bank account***): ");
                 int initialDeposit = scan.nextInt();
                 //for Initial Deposit You must deposit more than 1000tk for open a bank account***
-                if (initialDeposit >1000){
+                if (initialDeposit >=1000){
                     customerId +=1;
                     BankAccount obj1 = new BankAccount(initialDeposit,customerNAme,customerId,customerEmail);
                     System.out.println("-----------------------");

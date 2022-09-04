@@ -55,7 +55,7 @@ public class BankAccount {
     void withdraw(int amount) {
         if (amount <= getBalance()) {
             balance = balance - amount;
-            previousTransaction = +amount;
+            previousTransaction = -amount;
             System.out.println("****Withdrawn Successful***");
         } else {
             System.out.println("***Invalid Withdrawn Amount***");
