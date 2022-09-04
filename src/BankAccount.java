@@ -118,15 +118,6 @@ public class BankAccount {
                     withdraw(amount2);
                     System.out.println("\n");
                     break;
-                case 'D':
-                    System.out.println("-----------------------");
-                    System.out.println("Enter Bank Account Number:");
-                    System.out.println("-----------------------");
-                    int bankAcNo = scanner.nextInt();
-                    System.out.println("Enter Amount:");
-                    int amount = scanner.nextInt();
-                    System.out.println("-----------------------");
-                    break;
                 case 'E':
                     System.out.println("*************************");
                     break;
